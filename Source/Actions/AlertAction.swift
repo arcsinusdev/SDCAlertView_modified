@@ -77,3 +77,16 @@ extension AlertAction {
         case destructive
     }
 }
+
+extension AlertAction {
+  
+  public func setNewAttributes(_ attributes: [NSAttributedString.Key: Any]) {
+    guard let currentAttributedTitle = attributedTitle else { return }
+    let currentAttributedTitleString = currentAttributedTitle.string
+    
+    let newAttributedString = NSAttributedString.init(string: currentAttributedTitleString,
+                                                      attributes: attributes)
+    self.attributedTitle = newAttributedString
+  }
+  
+}
