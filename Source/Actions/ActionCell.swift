@@ -22,7 +22,8 @@ final class ActionCell: UICollectionViewCell {
         
         self.textColor = visualStyle.textColor(for: action)
         self.titleLabel.textColor = self.textColor ?? self.tintColor
-        
+      
+        self.titleLabel.numberOfLines = 0
         self.titleLabel.attributedText = action.attributedTitle
 
         self.highlightedBackgroundView.backgroundColor = visualStyle.actionHighlightColor
